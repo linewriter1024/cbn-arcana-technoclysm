@@ -1,0 +1,60 @@
+[
+  {
+    "id": "summon_magitech_boat",
+    "type": "SPELL",
+    "name": "Summon All-terrain Boat",
+    "description": "Materializes a magic all-terrain boat.",
+    "valid_targets": [ "ground" ],
+    "flags": [ "SILENT", "NO_HANDS", "NO_LEGS" ],
+    "effect": "summon_vehicle",
+    "effect_str": "magitech_boat",
+    "max_level": 20,
+    "min_range": 5,
+    "max_range": 5,
+    "min_duration": 720000,
+    "max_duration": 720000
+  },
+  {
+    "id": "magitech_boat_whistle",
+    "type": "TOOL",
+    "copy-from": "whistle",
+    "category": "tools",
+    "name": "all-terrain boat whistle",
+    "description": "A shiny whistle carved with the image of a boat on either side and a sail that you blow into. The boat has wheels.",
+    "price": "3000 USD",
+    "price_postapoc": "400 USD",
+    "material": [ "steel" ],
+    "ammo": "essence_type",
+    "max_charges": 9,
+    "charges_per_use": 1,
+    "use_action": [ { "type": "cast_spell", "spell_id": "summon_magitech_boat", "no_fail": true, "need_wielding": false, "level": 0 } ],
+    "extend": { "flags": [ "NO_SALVAGE", "MAGIC_FOCUS", "TRADER_KEEP_EQUIPPED" ] }
+  },
+  {
+    "result": "magitech_boat_whistle",
+    "type": "uncraft",
+    "skill_used": "magic",
+    "difficulty": 4,
+    "time": "20 m",
+    "tools": [ [ [ "hexenhammer", -1 ] ] ],
+    "components": [ [ [ "scrap", 10 ] ], [ [ "essence_dull", 60 ] ] ]
+  },
+  {
+    "type": "recipe",
+    "result": "magitech_boat_whistle",
+    "category": "CC_ARCANA",
+    "subcategory": "CSC_ARCANA_MAGITECH",
+    "skill_used": "magic",
+    "difficulty": 6,
+    "skills_required": [ [ "mechanics", 4 ] ],
+    "time": "1 h",
+    "book_learn": [ [ "recipe_lab_arcana", 5 ], [ "book_hexenhammer", 5 ] ],
+    "qualities": [ { "id": "HAMMER", "level": 2 }, { "id": "SCREW", "level": 1 }, { "id": "SAW_M", "level": 1 } ],
+    "components": [
+      [ [ "arcana_technoclysm_whistle", 1, "LIST" ] ],
+      [ [ "earth_talisman", 1 ] ],
+      [ [ "essence_blood", 10 ], [ "essence_dull", 100 ] ]
+    ],
+    "flags": [ "SECRET" ]
+  }
+]

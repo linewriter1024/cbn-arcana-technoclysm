@@ -1,0 +1,74 @@
+[
+  {
+    "abstract": "magitech_engine",
+    "copy-from": "engine_combustion",
+    "type": "vehicle_part",
+    "fuel_type": "essence_fake",
+    "m2c": 60,
+    "//": "30% energy efficiency",
+    "description": "A magical engine."
+  },
+  {
+    "id": "engine_vtwin_magitech",
+    "copy-from": "magitech_engine",
+    "type": "vehicle_part",
+    "item": "v2_combustion_magitech",
+    "durability": 200,
+    "epower": -50,
+    "power": 37300,
+    "energy_consumption": 124500,
+    "folded_volume": "2 L",
+    "breaks_into": [
+      { "item": "steel_lump", "count": [ 10, 20 ] },
+      { "item": "steel_chunk", "count": [ 10, 20 ] },
+      { "item": "scrap", "count": [ 10, 20 ] }
+    ],
+    "requirements": {
+      "install": { "skills": [ [ "mechanics", 2 ] ], "time": "60 m", "using": [ [ "vehicle_bolt", 1 ] ] },
+      "removal": { "skills": [ [ "mechanics", 2 ] ], "time": "30 m", "using": [ [ "vehicle_bolt", 1 ] ] },
+      "repair": { "skills": [ [ "mechanics", 3 ] ], "time": "60 m", "using": [ [ "welding_standard", 5 ] ] }
+    },
+    "damage_reduction": { "all": 60 },
+    "extend": { "flags": [ "NO_INSTALL_HIDDEN" ] }
+  },
+  {
+    "type": "GENERIC",
+    "id": "v2_combustion_magitech",
+    "name": "magic v-twin combustion engine",
+    "symbol": "v",
+    "description": "A magical engine.",
+    "volume": "2 L",
+    "weight": "10 kg",
+    "color": "yellow",
+    "material": [ "steel" ],
+    "price": "8000 USD"
+  },
+  {
+    "id": "arcana_technoclysm_advanced_ups",
+    "type": "vehicle_part",
+    "name": { "str": "integrated advanced eternal UPS" },
+    "symbol": "0",
+    "broken_symbol": "#",
+    "item": "arcana_technoclysm_advanced_ups_off",
+    "categories": [ "energy" ],
+    "color": "blue",
+    "broken_color": "red",
+    "durability": 120,
+    "description": "An integrated powerful magic device that constantly produces power.",
+    "folded_volume": "1 L",
+    "epower": 1000,
+    "breaks_into": [
+      { "item": "essence_dull", "count": [ 6, 9 ] },
+      { "item": "scrap", "count": [ 6, 9 ] }
+    ],
+    "requirements": {
+      "repair": {
+        "skills": [ [ "mechanics", 6 ], [ "electronics", 6 ], [ "magic", 8 ] ],
+        "time": "1 h",
+        "using": [ [ "soldering_standard", 1 ] ]
+      }
+    },
+    "damage_reduction": { "bash": 10 },
+    "flags": [ "REACTOR", "PERPETUAL" ]
+  }
+]

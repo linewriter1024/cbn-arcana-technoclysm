@@ -1,0 +1,38 @@
+[
+  {
+    "id": "arcana_technoclysm",
+    "type": "item_group",
+    "items": [
+      [ "magitech_motorcycle_whistle", 15 ],
+      [ "magitech_boat_whistle", 10 ],
+      [ "magitech_carriage_whistle", 10 ],
+      [ "arcana_technoclysm_ups_off", 10 ],
+      [ "arcana_technoclysm_advanced_ups_off", 1 ],
+      [ "arcana_technoclysm_bionic_talisman", 10 ]
+    ]
+  },
+  {
+    "id": "arcana_technoclysm_unique",
+    "type": "item_group",
+    "items": [
+      [ "magitech_motorcycle_whistle", 15 ],
+      [ "magitech_boat_whistle", 10 ],
+      [ "magitech_carriage_whistle", 10 ]
+    ]
+  },
+  {
+    "id": "science",
+    "type": "item_group",
+    "items": [ { "group": "arcana_technoclysm", "prob": 5 } ]
+  },
+  {
+    "id": "magic_items",
+    "type": "item_group",
+    "items": [ { "group": "arcana_technoclysm", "prob": 2 } ]
+  },
+  {
+    "id": "lab_magitech_other",
+    "type": "item_group",
+    "items": [ { "group": "arcana_technoclysm", "prob": 10 } ]
+  }
+]

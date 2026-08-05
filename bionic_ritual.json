@@ -1,0 +1,80 @@
+[
+  {
+    "id": "arcana_technoclysm_bionic_talisman",
+    "type": "COMESTIBLE",
+    "comestible_type": "MED",
+    "category": "other",
+    "name": { "str": "bionic talisman" },
+    "description": "A strange paper talisman marked with intricate symbols vaguely resembling a circuit diagram of great complexity.  Using it will summon an Avatar of the Bionic, who can fuse a bionic device into your body, forging electrical and magical connections to your brain and soul.  The process will leave you paralyzed for some time.",
+    "price_postapoc": "60 USD",
+    "weight": "150 g",
+    "volume": "100 ml",
+    "material": [ "paper" ],
+    "looks_like": "birchbark",
+    "symbol": ",",
+    "color": "cyan",
+    "use_action": {
+      "type": "place_npc",
+      "npc_class_id": "arcana_technoclysm_bionic_talisman_avatar",
+      "summon_msg": "A bionic avatar steps out of a rift in the air."
+    },
+    "flags": [ "NO_SALVAGE", "NO_INGEST", "NUTRIENT_OVERRIDE" ]
+  },
+  {
+    "type": "npc",
+    "id": "arcana_technoclysm_bionic_talisman_avatar",
+    "name_unique": "Bionic Avatar",
+    "gender": "male",
+    "attitude": 0,
+    "mission": 0,
+    "class": "NC_DOCTOR",
+    "chat": "TALK_BIONIC_TALISMAN_1",
+    "faction": "your_followers"
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_BIONIC_TALISMAN_1",
+    "dynamic_line": "What hast thou, son of the Earth?  What circuits shall pierce thy brain?  Speak thou quick, for I fade fast.",
+    "responses": [
+      {
+        "text": "I seek a free installation.",
+        "topic": "TALK_BIONIC_TALISMAN_PREPARE",
+        "opinion": { "trust": 1 }
+      },
+      { "text": "Leave my brain alone, for now.", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_BIONIC_TALISMAN_PREPARE",
+    "dynamic_line": "The avatar's circuits align, and the machinery of the ritual waits for a choice.",
+    "responses": [
+      {
+        "text": "Open the bionic installation menu.",
+        "topic": "TALK_DONE",
+        "effect": [
+          { "add_debt": [ [ "TRUST", 1 ], [ "TOTAL", 100000000 ] ] },
+          "bionic_install"
+        ]
+      },
+      { "text": "Leave my brain alone, for now.", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "recipe",
+    "result": "arcana_technoclysm_bionic_talisman",
+    "category": "CC_ARCANA",
+    "subcategory": "CSC_ARCANA_MAGITECH",
+    "skill_used": "magic",
+    "difficulty": 7,
+    "skills_required": [ [ "electronics", 6 ] ],
+    "time": "1 h",
+    "book_learn": [ [ "recipe_lab_arcana", 6 ], [ "recipe_lab_elec", 6 ], [ "book_hexenhammer", 7 ] ],
+    "qualities": [ { "id": "CUT", "level": 1 } ],
+    "components": [
+      [ [ "paper", 20 ], [ "tanbark", 1 ], [ "birchbark", 1 ], [ "willowbark", 1 ] ],
+      [ [ "bio_power_storage", 1 ], [ "bio_power_storage_mkII", 1 ], [ "bio_batteries", 1 ], [ "bio_metabolics", 1 ], [ "bio_ethanol", 1 ], [ "bio_torsionratchet", 1 ], [ "bio_fuel_cell_gasoline", 1 ] ]
+    ],
+    "flags": [ "SECRET" ]
+  }
+]
