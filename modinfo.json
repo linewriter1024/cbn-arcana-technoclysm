@@ -7,6 +7,7 @@
     "description": "Adds a technical aspect to the Arcana mod. A faction of arcanists developed magical technology just before the Cataclysm. Includes summonable vehicles, new locations, and new magical tools.",
     "version": "1.0",
     "category": "magical",
+    "lua_api_version": 2,
     "dependencies": [ "bn", "Arcana" ]
   }
 ]
